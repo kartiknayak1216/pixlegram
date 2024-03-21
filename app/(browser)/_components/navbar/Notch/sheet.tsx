@@ -33,9 +33,11 @@ import Navetoggle from "@/components/ui/navetoggle";
             <SheetTitle>Are you absolutely sure?</SheetTitle>
             <SheetDescription>
             
-             {data.map((value,index)=>(
+            
              
              <SheetClose asChild>
+              <div>
+             {data.map((value,index)=>(
               <div key={index}>
              <Link href={value.link}   className="flex flex-row   space-y-2 ">
              <Button
@@ -48,7 +50,7 @@ import Navetoggle from "@/components/ui/navetoggle";
                     </Button>
 </Link></div>
 
-</SheetClose>     ))}
+     ))}</div></SheetClose>
 <div className='mt-1 justify-center'>
 <div className='mt-5 justify-center'>
        < Navetoggle/></div></div>

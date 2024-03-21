@@ -22,8 +22,8 @@ export default async function page({params:{id}}:Props) {
         <div className='text-center'>{post.name} dont have any post</div>
       ) : (
         post?.posts.map((value, index) => (
-          <div className='mx-auto'>
-          <SmallCard key={index} post={value} dataname={data?.name ?? ""} dataimage={data?.image ?? ""} /></div>
+          <div className='mx-auto' key={index}>
+          <SmallCard  post={value} dataname={data?.name ?? ""} dataimage={data?.image ?? ""} /></div>
         ))
       )}</Suspense>
     </div>

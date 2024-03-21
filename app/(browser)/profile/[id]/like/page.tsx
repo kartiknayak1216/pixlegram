@@ -24,8 +24,8 @@ export default async function page({params:{id}}:Props) {
         <div className='text-center'>You don't have any Saved posts. Like a post.</div>
       ) : (
         post?.likes.map((value, index) => (
-          <div className='mx-auto'>
-          <SmallCard key={index} post={value.post} dataname={value.post.user.name ?? ""} dataimage={value.post.user.image ?? ""} /></div>
+          <div className='mx-auto'  key={index}>
+          <SmallCard post={value.post} dataname={value.post.user.name ?? ""} dataimage={value.post.user.image ?? ""} /></div>
         ))
       )}</Suspense>
     </div>

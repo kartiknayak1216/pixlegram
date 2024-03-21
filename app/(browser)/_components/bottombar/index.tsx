@@ -1,7 +1,7 @@
 "use client"
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Compass, HomeIcon, PlusCircle, Search } from 'lucide-react';
+import { Compass, HomeIcon, PlusCircle, Search, Settings } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -37,11 +37,7 @@ import dynamic from "next/dynamic";
                     </Button>
                 </Link>
 
-                <Link href="/search">
-                    <Button variant="ghost" className={cn(current == "/search" && "bg-secondary border text-muted-foreground")}>
-                        <Search />
-                    </Button>
-                </Link>
+              
 
                 <Link href="/create" >
                     <Button variant="ghost" className={cn(current == "/create" && "bg-secondary border text-muted-foreground")}>
@@ -49,11 +45,18 @@ import dynamic from "next/dynamic";
                     </Button>
                 </Link>
 
-                <Link href="/explore" >
-                    <Button variant="ghost" className={cn(current == "/explore" && "bg-secondary border text-muted-foreground")}>
+                <Link href="/settings">
+                    <Button variant="ghost" className={cn(current == "/settings" && "bg-secondary border text-muted-foreground")}>
+                        <Settings />
+                    </Button>
+                </Link>
+
+                <Link href="/profile/clto1zmwd000314dksh93pm13">
+                    <Button variant="ghost" className={cn(current == "/profile/clto1zmwd000314dksh93pm13" && "bg-secondary border text-muted-foreground")}>
                         <Compass />
                     </Button>
                 </Link>
+
             </div>
             
         </div>
