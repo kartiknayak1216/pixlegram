@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { ThemeProvider } from "@/components/ui/theme-provider";
+import NextAuth from "next-auth";
+import AuthProvider from "@/components/ui/AuthProvider";
+import { Toaster, toast } from 'sonner'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +19,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}   >
+        <AuthProvider>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+
+        {children}
+        <Toaster richColors />
+        </ThemeProvider>
+        </AuthProvider></body>
     </html>
   );
 }
