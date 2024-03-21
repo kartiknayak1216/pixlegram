@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function updateprform() {
+export default function Updateprform() {
   return (
     <div>updateprform</div>
   )

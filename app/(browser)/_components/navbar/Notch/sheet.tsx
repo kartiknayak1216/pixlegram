@@ -41,6 +41,7 @@ import Navetoggle from "@/components/ui/navetoggle";
               <div key={index}>
              <Link href={value.link}   className="flex flex-row   space-y-2 ">
              <Button
+               key={index} 
                       variant="ghost"
                       className={cn("flex w-full h-12 justify-start rounded-sm", value.link === currentPath && "bg-accent text-primary")}
                     >

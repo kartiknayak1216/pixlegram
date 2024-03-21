@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { Button } from './ui/button';
 import { usePathname } from 'next/navigation';
 
-export default function profilebutton({user}:{user:User}) {
+export default function Profilebutton({user}:{user:User}) {
   
 
     const toogled = sidebarSlice((state) => state.toogled);

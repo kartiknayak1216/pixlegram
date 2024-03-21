@@ -19,7 +19,7 @@ import { PostWithExtras } from '../posttoggle/like'
 import Cardnotch from '../ui/cardnotch'
 import CommentDisplay from "../posttoggle/comment"
 
-export default async function maincard({ user }: { user: PostWithExtras }) {
+export default async function Maincard({ user }: { user: PostWithExtras }) {
   const data = await userdata();
   const currentuser = data?.id === user.userId;
 

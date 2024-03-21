@@ -10,7 +10,7 @@ type PosttoggleProps = {
     className: string;
 userId: string
   };
-export default function index({ post, className,userId }: PosttoggleProps) {
+export default function Index({ post, className,userId }: PosttoggleProps) {
   return (
     <div className={cn("relative flex items-start w-full gap-x-2 mt-0", className)}>
         <Savebutton id={post.id} />

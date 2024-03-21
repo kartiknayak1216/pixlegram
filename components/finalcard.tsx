@@ -24,7 +24,7 @@ import Deletecomment from './deletecomment';
 import { User } from '@prisma/client';
 import Fcomment from './fcomment';
 
-export default function finalcard({ post,data }: { post: PostWithExtras ,data:User}) {
+export default function Finalcard({ post,data }: { post: PostWithExtras ,data:User}) {
     
     const currentuser = data?.id === post.userId;
 

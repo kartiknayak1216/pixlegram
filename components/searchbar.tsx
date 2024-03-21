@@ -16,7 +16,7 @@ import {
     DialogTrigger,
   } from "@/components/ui/dialog"
   
-export default function searchbar() {
+export default function Searchbar() {
 
   const[value,setValue] =useState("");
   const router = useRouter()

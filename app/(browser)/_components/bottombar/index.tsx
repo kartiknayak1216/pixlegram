@@ -10,7 +10,7 @@ import { useMediaQuery } from 'react-responsive';
 import dynamic from "next/dynamic";
 
 
- export default function  bar() {
+ export default function  Bar() {
     const current = usePathname();
     const isSmallDevice = useMediaQuery({ maxWidth: 480 });
 
@@ -68,9 +68,9 @@ import { SkeletonDemo } from '../sidebar/wrapper'
 
 export  function BottomBarSkeleton() {
     return (
-        <div className="fixed bottom-0 left-0 z-50 w-full h-16 shadow-sm backdrop-blur-lg bg-background bg-opacity-30 border-t-2">
-            <div className="grid h-full max-w-lg grid-cols-4 mx-auto my-auto text-center justify-center items-center">
-                <Skeleton className="h-6 w-6" />
+        <div className="fixed bottom-0 left-0 z-50 w-full h-16 shadow-sm backdrop-blur-lg bg-background bg-opacity-30 border-t-2 md:hidden">
+            <div className="grid h-full max-w-lg grid-cols-4 mx-auto my-auto text-center justify-center items-center px-2 ml-4">
+                <Skeleton className="h-6 w-6 "  />
                 <Skeleton className="h-6 w-6" />
                 <Skeleton className="h-6 w-6" />
                 <Skeleton className="h-6 w-6" />

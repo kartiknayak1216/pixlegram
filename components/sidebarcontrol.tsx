@@ -6,7 +6,7 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import UserAvatar from './UserAvtar'
 
-export default async function sidebarcontrol() {
+export default async function Sidebarcontrol() {
     const user = await users()
     const toogled = sidebarSlice((state) => state.toogled);
 

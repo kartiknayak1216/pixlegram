@@ -6,7 +6,7 @@ import { deleteComment } from '@/lib/data'
 import { toast } from 'sonner'
 
 
-export default function deletecomment({usersid}:{usersid:string}) {
+export default function Deletecomment({usersid}:{usersid:string}) {
 
     const[loading,setLoading]= useState(false)
   return (

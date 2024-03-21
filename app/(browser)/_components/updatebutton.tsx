@@ -36,7 +36,7 @@ import { redirect } from "next/dist/server/api-utils"
   
 import { useRouter } from 'next/navigation'
 
-  export default function updatebutton({post}:{post:PostWithExtra}) {
+  export default function Updatebutton({post}:{post:PostWithExtra}) {
    
    
     const router = useRouter()

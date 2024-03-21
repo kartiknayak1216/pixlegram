@@ -22,7 +22,7 @@ import { Separator } from './ui/separator';
 import { ModeToggle } from './ui/MoonToggle';
 import { useTheme } from "next-themes"
 
-export default function sidetoggle() {
+export default function Sidetoggle() {
     const toogled = sidebarSlice((state) => state.toogled);
     const { setTheme } = useTheme()
 

@@ -4,7 +4,7 @@ import { PostWithExtras } from './like'
 import Link from 'next/link'
 import Deletecomment from '../deletecomment'
 
-export default function commentdisplay( {post, id}:{ post: PostWithExtras,id:string}) {
+export default function Commentdisplay( {post, id}:{ post: PostWithExtras,id:string}) {
   return (
     <div className='flex flex-col space-y-2'>
    { post.comments.length > 0 && (

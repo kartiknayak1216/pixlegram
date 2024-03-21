@@ -10,7 +10,7 @@ import { Button } from './ui/button'
 import { ScrollBar } from './ui/scroll-area'
 import { Skeleton } from './ui/skeleton'
 
-export default function commentscroller({
+export default function Commentscroller({
     comments,data
 }:{
     comments:CommentWithExtras,

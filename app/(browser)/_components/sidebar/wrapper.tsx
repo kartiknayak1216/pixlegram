@@ -6,7 +6,7 @@ import Content from './content'
 import Tooltip from './tooltip'
 import Togglebutton from './togglebutton'
 
-export default function wrapper() {
+export default function Wrapper() {
   const toogled  =  sidebarSlice((state)=> state.toogled)
   const[isClient ,setIsclient] = useState(false)
 

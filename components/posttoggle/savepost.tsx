@@ -6,7 +6,7 @@ import { Button } from '../ui/button';
 import { Bookmark } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { save } from '@/lib/action';
-export default function savepost({post,userId}:
+export default function Savepost({post,userId}:
   {post:PostWithExtras ,userId:string}
 ) {
 

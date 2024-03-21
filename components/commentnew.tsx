@@ -12,7 +12,7 @@ type Comment = {
     userId: string;
 }
 
-export default function commentnew({postId,user, comments}:{
+export default function Commentnew({postId,user, comments}:{
     postId: string;
     comments: CommentWithExtras[];
     user?: User | null;

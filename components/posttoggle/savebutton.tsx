@@ -7,7 +7,7 @@ import { postes } from '@/lib/defination'
 import { Link } from 'lucide-react'
 import { toast } from 'sonner'
 
-export default function savebutton({ id }: { id: string }) {
+export default function Savebutton({ id }: { id: string }) {
     const copy = () => {
         navigator.clipboard.writeText(`localhost:300/post/${id}`)
         toast.success("Link copied to clipboard");
