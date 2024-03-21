@@ -21,7 +21,7 @@ import { useTheme } from "next-themes"
 import { Button } from './button';
 import { Separator } from './separator';
 
-export default function navetoggle() {
+export default function Navetoggle() {
     const { setTheme } = useTheme()
   return (
     <div>

@@ -20,7 +20,7 @@ export default async function page({params:{id}}:Props) {
           <Suspense fallback={<SmallCardSkeleton/>}>
 
       {post?.Savedpost.length === 0 ? (
-        <div className='text-center'>You don't have any  saved posts. save a post.</div>
+        <div className='text-center'>You don&apos;t have any saved posts. Save a post.</div>
       ) : (
         post?.Savedpost.map((value, index) => (
           <div className='mx-auto' key={index}>

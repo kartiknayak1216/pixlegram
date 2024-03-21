@@ -20,7 +20,7 @@ import { redirect } from 'next/dist/server/api-utils'
 import Updatebutton from '@/app/(browser)/_components/updatebutton'
 import { PostWithExtra } from '@/lib/defination'
   
-export default function cardnotch({usersid, islike,post}:{usersid:string,islike:boolean,post:PostWithExtra}) {
+export default function Cardnotch({usersid, islike,post}:{usersid:string,islike:boolean,post:PostWithExtra}) {
     const[isloading,setLoading]=useState(false)
 const[open,setOpen]=useState(false)
   return (
