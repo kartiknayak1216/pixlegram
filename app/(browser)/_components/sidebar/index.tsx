@@ -4,7 +4,7 @@ import Action from './action'
 
 export default function index() {
   return (
-    <Action>
+    <Action >
     <Wrapper/></Action>
   )
 }

@@ -1,3 +1,4 @@
+"use client"
 import React, { Suspense } from 'react';
 import { user } from '@/auth';
 import { Button } from '@/components/ui/button';
@@ -20,9 +21,11 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Formkseleton } from './skelton/Homecardshelton';
 import { Commentfinal } from './finalcomments';
 import Deletecomment from './deletecomment';
+import { User } from '@prisma/client';
+import Fcomment from './fcomment';
 
-export default async function finalcard({ post }: { post: PostWithExtras }) {
-    const data = await user();
+export default function finalcard({ post,data }: { post: PostWithExtras ,data:User}) {
+    
     const currentuser = data?.id === post.userId;
 
     return (
@@ -53,29 +56,20 @@ export default async function finalcard({ post }: { post: PostWithExtras }) {
                     <Posttoggle post={post} className='px-3 sm:px-0' userId={data?.id || ""}/>
                     </CardHeader>
                     <CardContent>
+                    <Suspense fallback={<Formkseleton/>}>
                         <ScrollArea className="rounded-md border h-[380px]">
                          {
                           (post.comments.length>0)?(   <div className="p-4">
                           {post.comments?.map((value, index) => (
                            
-                              <div key={index}>
-                                  <ScrollArea className="w-80 rounded-md border">
-                                  <div className="flex flex-col">
-                                  <Link href={`/profile/${value.userId}`}>
-                                  <Button key={index} variant="secondary" className="w-full flex flex-row justify-start gap-10 h-full mt-5">
-                                  <UserAvatar userimage={value.user.image ?? ''} username={value.user.name ?? ''} />
-                {value.body}
-                {(value.userId === data?.id) && <Deletecomment usersid={value.id} />}
-            </Button></Link></div>
-                                      <ScrollBar orientation="horizontal" />
-                                  </ScrollArea>
-                                  <Separator className="my-2" />
+                              <div key={index} suppressHydrationWarning={true} className='mt-2'>
+                               <Fcomment comments={value} data={data} />
                               </div>
                           ))}
                       </div>):(<div className="mx-auto text-center">This post dont have comments</div>)
                          }
                             <ScrollBar orientation="vertical" />
-                        </ScrollArea>
+                        </ScrollArea></Suspense>
 
                     </CardContent>
                 </Card>
@@ -92,26 +86,19 @@ export default async function finalcard({ post }: { post: PostWithExtras }) {
                  </DialogTrigger>
                  <DialogContent>
                     <Suspense fallback={<Formkseleton/>}>
-                     <ScrollArea className="rounded-md border h-[400px]">
-                         <div className="p-4">
-                             {post.comments?.map((value, index) => (
-                                 <div key={index}>
-                                     <ScrollArea className="w-80 rounded-md border">
-                                     <div className="flex flex-col">
-                                     <Link href={`/profile/${value.userId}`}>
-      <Button key={index} variant="secondary" className="w-full flex flex-row justify-start gap-10 h-full mt-5">
-                <UserAvatar userimage={value.user.image ?? ''} username={value.user.name ?? ''} />
-                {value.body}
-                {(value.userId === data?.id) && <Deletecomment usersid={value.id} />}
-            </Button></Link></div>
-                                         <ScrollBar orientation="horizontal" />
-                                     </ScrollArea>
-                                     <Separator className="my-2" />
-                                 </div>
-                             ))}
-                         </div>
-                         <ScrollBar orientation="vertical" />
-                     </ScrollArea></Suspense>
+                    <ScrollArea className="rounded-md border h-[380px]">
+                         {
+                          (post.comments.length>0)?(   <div className="p-4">
+                          {post.comments?.map((value, index) => (
+                           
+                              <div key={index} suppressHydrationWarning={true} className='mt-2'>
+                               <Fcomment comments={value} data={data} />
+                              </div>
+                          ))}
+                      </div>):(<div className="mx-auto text-center">This post dont have comments</div>)
+                         }
+                            <ScrollBar orientation="vertical" />
+                        </ScrollArea></Suspense>
                  </DialogContent>
              </Dialog>
                ):(

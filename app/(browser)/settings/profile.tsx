@@ -61,7 +61,7 @@ redirect(`/profile/${userid}`);
 
   }
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[350px] mb-4">
         <form action={uploadf}>
       <CardHeader>
         <CardTitle>Your profile settings</CardTitle>

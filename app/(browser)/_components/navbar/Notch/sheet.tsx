@@ -36,7 +36,8 @@ import Navetoggle from "@/components/ui/navetoggle";
              {data.map((value,index)=>(
              
              <SheetClose asChild>
-             <Link href={value.link} key={index}  className="flex flex-row   space-y-2 ">
+              <div key={index}>
+             <Link href={value.link}   className="flex flex-row   space-y-2 ">
              <Button
                       variant="ghost"
                       className={cn("flex w-full h-12 justify-start rounded-sm", value.link === currentPath && "bg-accent text-primary")}
@@ -45,7 +46,7 @@ import Navetoggle from "@/components/ui/navetoggle";
                       <div className="mr-6">{value.icon}</div>
                       <div className="font-bold">{value.title}</div>
                     </Button>
-</Link>
+</Link></div>
 
 </SheetClose>     ))}
 <div className='mt-1 justify-center'>

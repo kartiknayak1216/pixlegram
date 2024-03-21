@@ -8,11 +8,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
       <>
       <Navbar/>
-      <Bottombar/>
+      
  <div  className='flex h-full pt-20'>
          
           
          <Sidebar/></div>
+        
+         <Bottombar/>
          <div
         className=' inset-0 flex justify-center items-center mt-20 '>
         

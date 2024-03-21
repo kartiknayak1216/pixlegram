@@ -12,7 +12,7 @@ export default function deletecomment({usersid}:{usersid:string}) {
   return (
 
     <form>
-<Button variant={'ghost'} size={'icon'}
+<Button variant={'ghost'} size={'sm'}
 
 onClick={async(e)=>{
   e.preventDefault()
