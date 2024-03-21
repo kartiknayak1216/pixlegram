@@ -24,7 +24,7 @@ export default async function page({params:{id}}:Props) {
       ) : (
         post?.Savedpost.map((value, index) => (
           <div className='mx-auto' key={index}>
-          <SmallCard  post={value.post} dataname={value.post.user.name ?? ""} dataimage={value.post.user.image ?? ""} /></div>
+          <SmallCard  post={value.post??""} dataname={value.post.user.name ?? ""} dataimage={value.post.user.image ?? ""} /></div>
         ))
       )}</Suspense>
     </div>
