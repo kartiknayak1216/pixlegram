@@ -71,7 +71,7 @@ async function Layout({ children, params: { id } }: Props) {
             )
           }
                 <Headerb userbio={userData?.bio ?? ""} userlink={userData?.website ?? ""}/>
-                <div className='text-bold text-slate-500 text-sm'>{userData.location??""}</div>
+               
 
               </div>
             </div>
