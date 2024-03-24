@@ -168,10 +168,12 @@ if(!post){
 try{
 await prisma.comment.create({
   data:{
-    postId:postid,
+    
+    postId:postid ,
     userId:userid,
     body: body 
   }
+  
 })
 revalidatePath(`/profile/${post.id}`);
 

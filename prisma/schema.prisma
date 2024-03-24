@@ -9,7 +9,7 @@ generator client {
 }
 
 model Account {
-  id                String  @id @map("_id")
+  id                String  @id @default(cuid()) @map("_id")
   userId            String
   type              String
   provider          String
@@ -28,7 +28,7 @@ model Account {
 }
 
 model Session {
-  id           String   @id @map("_id")
+  id           String   @id @default(cuid()) @map("_id")
   sessionToken String   @unique
   userId       String
   expires      DateTime
@@ -36,7 +36,7 @@ model Session {
 }
 
 model User {
-  id            String      @id @map("_id")
+  id            String      @id @default(cuid()) @map("_id")
   name          String?
   username      String?
   email         String?     @unique
@@ -58,7 +58,7 @@ model User {
 }
 
 model Post {
-  id        String      @id @map("_id")
+  id        String      @id @default(cuid()) @map("_id")
   createdAT DateTime    @default(now())
   updatedAt DateTime    @updatedAt
   caption   String
@@ -72,7 +72,7 @@ model Post {
 }
 
 model Follows {
-  id          String @id @map("_id")
+  id          String @id @default(cuid()) @map("_id")
   follower    User   @relation("followers", fields: [followerId], references: [id])
   followerId  String
   following   User   @relation("following", fields: [followingId], references: [id])
@@ -82,7 +82,7 @@ model Follows {
 }
 
 model SavedPost {
-  id        String   @id @map("_id")
+  id        String   @id @default(cuid()) @map("_id")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   post      Post     @relation(fields: [postid], references: [id], onDelete: Cascade)
@@ -94,7 +94,7 @@ model SavedPost {
 }
 
 model Like {
-  id        String   @id @map("_id")
+  id        String   @id @default(cuid()) @map("_id")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
@@ -107,7 +107,7 @@ model Like {
 }
 
 model Comment {
-  id        String   @id @map("_id")
+  id        String   @id @default(cuid()) @map("_id")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   body      String
