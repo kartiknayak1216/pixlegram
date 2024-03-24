@@ -26,6 +26,7 @@ import { getServerSession } from "next-auth"
         session.user.image = token.picture;
         session.user.username = token.username;
       }
+    
 
       return session;
     },
